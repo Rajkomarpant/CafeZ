@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Café Aroma - Management System</title>
+  <title>Brew Haven Café - Management System</title>
   <style>
     /* ---------- GLOBAL STYLES ---------- */
     * {
@@ -14,35 +14,48 @@
     }
 
     body {
-      background-color: #f8f5f1;
+      background-color: #fdf8f3;
       color: #3e2723;
+      scroll-behavior: smooth;
     }
 
     header {
-      background: linear-gradient(90deg, #6f4e37, #a1887f);
+      background: linear-gradient(90deg, #4b2c20, #8d6e63);
       color: #fff;
       padding: 1.5rem;
       text-align: center;
       font-size: 1.8rem;
       letter-spacing: 2px;
       font-weight: 600;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
 
     .hero {
-      background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') center/cover no-repeat;
+      background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       height: 60vh;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #fff;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
       font-size: 2.2rem;
       font-weight: 600;
+      letter-spacing: 1px;
+      flex-direction: column;
+    }
+
+    .hero h1 {
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
 
     /* ---------- MENU SECTION ---------- */
     .menu {
-      padding: 2rem;
+      padding: 2.5rem;
       text-align: center;
     }
 
@@ -63,7 +76,7 @@
       background-color: #fff;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      width: 200px;
+      width: 220px;
       padding: 1rem;
       transition: 0.3s;
     }
@@ -75,7 +88,7 @@
     .item img {
       width: 100%;
       border-radius: 10px;
-      height: 130px;
+      height: 140px;
       object-fit: cover;
     }
 
@@ -97,6 +110,7 @@
 
     .order-form h2 {
       margin-bottom: 1rem;
+      color: #4e342e;
     }
 
     form {
@@ -112,6 +126,7 @@
       border: none;
       border-radius: 6px;
       font-size: 1rem;
+      outline: none;
     }
 
     button {
@@ -128,12 +143,13 @@
     /* ---------- ORDERS SECTION ---------- */
     .orders {
       padding: 2rem;
-      background: #fff3e0;
+      background: #fff8f2;
     }
 
     .orders h2 {
       text-align: center;
       margin-bottom: 1rem;
+      color: #4e342e;
     }
 
     .order-list {
@@ -150,45 +166,91 @@
       padding: 0.5rem 0;
     }
 
+    /* ---------- REVIEWS ---------- */
+    .reviews {
+      padding: 2rem;
+      text-align: center;
+      background-color: #fbe9e7;
+    }
+
+    .reviews h2 {
+      color: #4e342e;
+      margin-bottom: 1rem;
+    }
+
+    .review-box {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .review {
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      width: 250px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .review p {
+      font-style: italic;
+    }
+
+    .review h4 {
+      margin-top: 0.5rem;
+      color: #5d4037;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
-      background-color: #6f4e37;
+      background-color: #4b2c20;
       color: #fff;
       font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #ffd54f;
+      text-decoration: none;
     }
   </style>
 </head>
 
 <body>
-  <header>Café Aroma ☕</header>
+  <header>Brew Haven Café ☕</header>
 
   <section class="hero">
-    <h1>Welcome to Café Aroma — Brewed with Love</h1>
+    <h1>Sip. Relax. Repeat.</h1>
   </section>
 
   <section class="menu">
     <h2>Our Menu</h2>
     <div class="menu-items">
       <div class="item">
-        <img src="https://images.unsplash.com/photo-1510626176961-4b37d0d4d5a2" alt="Cappuccino">
+        <img src="https://images.unsplash.com/photo-1607083205127-1ee09b70594e?auto=format&fit=crop&w=800&q=80" alt="Cappuccino">
         <h3>Cappuccino</h3>
         <p>₹120</p>
       </div>
       <div class="item">
-        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Latte">
+        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80" alt="Latte">
         <h3>Latte</h3>
         <p>₹130</p>
       </div>
       <div class="item">
-        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085" alt="Espresso">
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80" alt="Espresso">
         <h3>Espresso</h3>
         <p>₹100</p>
       </div>
       <div class="item">
-        <img src="https://images.unsplash.com/photo-1556909212-62f23c1d8fc5" alt="Cold Coffee">
+        <img src="https://images.unsplash.com/photo-1613470207924-8dc68ed1f1b2?auto=format&fit=crop&w=800&q=80" alt="Cold Coffee">
         <h3>Cold Coffee</h3>
         <p>₹150</p>
+      </div>
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1607083205127-1ee09b70594e?auto=format&fit=crop&w=800&q=80" alt="Mocha">
+        <h3>Mocha</h3>
+        <p>₹140</p>
       </div>
     </div>
   </section>
@@ -203,6 +265,7 @@
         <option value="Latte">Latte</option>
         <option value="Espresso">Espresso</option>
         <option value="Cold Coffee">Cold Coffee</option>
+        <option value="Mocha">Mocha</option>
       </select>
       <input type="number" id="quantity" placeholder="Quantity" min="1" required />
       <button type="submit">Submit Order</button>
@@ -216,8 +279,27 @@
     </div>
   </section>
 
+  <section class="reviews">
+    <h2>What Our Customers Say</h2>
+    <div class="review-box">
+      <div class="review">
+        <p>“The best cappuccino in town! The ambiance is so cozy.”</p>
+        <h4>- Aisha</h4>
+      </div>
+      <div class="review">
+        <p>“Cold coffee that tastes like heaven. Absolutely loved it!”</p>
+        <h4>- Rohan</h4>
+      </div>
+      <div class="review">
+        <p>“Friendly staff, smooth service, and perfect brews.”</p>
+        <h4>- Meera</h4>
+      </div>
+    </div>
+  </section>
+
   <footer>
-    © 2025 Café Aroma | Designed by Shivam
+    © 2025 Brew Haven Café | Designed by Shivam <br />
+    📍 Panjim, Goa | 📞 +91 98765 43210 | ✉️ <a href="mailto:brewhaven@gmail.com">brewhaven@gmail.com</a>
   </footer>
 
   <script>
